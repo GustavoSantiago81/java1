@@ -1,0 +1,35 @@
+package aula_02_Atividades;
+
+import java.util.Scanner;
+
+public class Atividade3V2 {
+
+	public static void main(String[] args) {
+		Scanner leia = new Scanner(System.in);
+		String nome;
+		int idade;
+		boolean primeira;
+		
+		
+
+		System.out.println("Digite o nome do doador: ");
+		nome = leia.nextLine();
+		System.out.println("Digite a idade do doador: ");
+		idade = leia.nextInt();
+		System.out.println("Primeira doação de sangue do doador?: ");
+		primeira = leia.nextBoolean();
+		
+		
+
+		if (idade > 0 && idade < 18 || idade > 69 || idade >= 60 && idade <= 69 && primeira)
+			System.out.println(nome + " não está apto para doar sangue!");
+		else if (idade >= 18 && idade <= 69 || idade >= 60 && idade <= 69 && !primeira)
+			System.out.println(nome + " está apto para doar sangue!");
+		else 
+			System.out.println("Informação incorreta");
+		
+		
+		leia.close();
+	}
+
+}
