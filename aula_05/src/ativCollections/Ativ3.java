@@ -11,18 +11,18 @@ public class Ativ3 {
 
 		Scanner leia = new Scanner(System.in);
 
-		Set<Double> numeros = new HashSet<Double>();
+		Set<Integer> numeros = new HashSet<Integer>();
 
-		double numero = 0;
+		int numero = 0;
 
 		System.out.println("[Digite 10 valores inteiros não repetidos]");
 		for (int i = 1; i < 11; i++) {
 			System.out.println("Digite o " + i + "º número");
-			numero = leia.nextDouble();
+			numero = leia.nextInt();
 			numeros.add(numero);
 		}
 		
-		Iterator<Double> iNumeros = numeros.iterator();
+		Iterator<Integer> iNumeros = numeros.iterator();
 		while (iNumeros.hasNext()) {
 			System.out.println(iNumeros.next());
 		}
