@@ -6,10 +6,10 @@ public class Ativ2 {
 
 	public static void main(String[] args) {
 
-		Scanner leia = new Scanner(System.in);
+	/*	Scanner leia = new Scanner(System.in);
 
 		int numero, vetor[] = new int[10], localizador = 0, pares = 0, indice = 0, impares = 0, soma, media;
-/*
+
 		
 		for (int entrada = 0; entrada < vetor.length; entrada++) {
 			System.out.println("Digite uma valor para a posica [" + entrada + "]");
@@ -43,8 +43,8 @@ public class Ativ2 {
 		if (indice % 2 != 0) {
 			pares++;
 		}
-*/
-		leia.close();
+
+		leia.close();  */
 	}
 
 }
