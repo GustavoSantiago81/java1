@@ -1,6 +1,6 @@
 package aula_06;
 
-public class Farmacia {
+public abstract class Farmacia {
 	
 	private long id;
 	private String nome;
@@ -8,15 +8,19 @@ public class Farmacia {
 	private String fabricante;
 	private String foto;
 	private float preco;
+	private int tipo;
 	
-	public Farmacia(long id, String nome, String nomeComercial, String fabricante, String foto, float preco) {
+	public Farmacia(long id, String nome, String nomeComercial, String fabricante, String foto, float preco, int tipo) {
 		this.id = id;
 		this.nome = nome;
 		this.nomeComercial = nomeComercial;
 		this.fabricante = fabricante;
 		this.foto = foto;
 		this.preco = preco;
+		this.tipo = tipo;
 	}
+	
+	public abstract void reajuste(float percentual);
 
 	public long getId() {
 		return id;
@@ -66,7 +70,25 @@ public class Farmacia {
 		this.preco = preco;
 	}
 	
+	
+	
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 	public void visualizar() {
+		
+		String tipo = "";
+		
+		switch(this.tipo) {
+		case 1 -> tipo = "Medicamento";
+		case 2 -> tipo = "Perfumaria";
+		}
+		
 		System.out.println("************************");
 		System.out.println("    Dados do Produto    ");
 		System.out.println("************************");
@@ -76,5 +98,6 @@ public class Farmacia {
 		System.out.println("\nFabricante: " + this.fabricante);
 		System.out.println("\nFoto: " + this.foto);
 		System.out.println("\nPreço: " + this.preco);
+		System.out.println("\nTipo: " + tipo);
 	}
 }

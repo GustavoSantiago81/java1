@@ -12,9 +12,10 @@ public class TestaFarmacia {
 		ArrayList<Farmacia> medicamentos = new ArrayList<Farmacia>();
 		
 		long id;
-		String nome, nomeComercial, fabricante, foto;
+		String nome, nomeComercial, fabricante, foto, principioAtivo, fragancia;
 		float preco;
 		String opcao = "";
+		int tipo;
 		
 		do {
 			
@@ -38,12 +39,35 @@ public class TestaFarmacia {
 		foto = leia.nextLine();
 		
 		System.out.println("\nPreço: ");
-		leia.skip("\\R?");
 		preco = leia.nextFloat();
 		
-		Farmacia f1 = new Farmacia(id, nome, nomeComercial, fabricante, foto, preco);
+		System.out.println("\nTipo: ");
+		tipo = leia.nextInt();
 		
-		medicamentos.add(f1);
+		// Alta abstração
+		//Farmacia f1 = new Farmacia(id, nome, nomeComercial, fabricante, foto, preco, tipo);
+
+		switch(tipo) {
+		case 1 ->{
+			System.out.println("\nPrincípio ativo: ");
+			leia.skip("\\R?");
+			principioAtivo = leia.nextLine();
+			
+			Medicamento m1 = new Medicamento(id, nome, nomeComercial, fabricante, foto, preco, tipo, principioAtivo);
+			
+			medicamentos.add(m1);
+		}
+		case 2 ->{
+			System.out.println("\nFragância: ");
+			leia.skip("\\R?");
+			fragancia = leia.nextLine();
+			
+			Perfumaria p1 = new Perfumaria(id, nome, nomeComercial, fabricante, foto, preco, tipo, fragancia);
+			
+			medicamentos.add(p1);
+		}
+		}
+		
 		
 		System.out.println("\nDeseja continuar? ");
 		leia.skip("\\R?");
@@ -51,15 +75,10 @@ public class TestaFarmacia {
 		
 		} while (opcao.equals("s"));
 		
-		for(var medicamento : medicamentos)
-			medicamento.visualizar();
-		
-		
-		//Farmacia f2 = new Farmacia(2, "Paracetamol", "Tylenol", "Neo Quimica", " - ", 10.0f);
-	
-		//f1.visualizar();
-
-		//f2.visualizar();
+		for(var produto : medicamentos) {
+			produto.reajuste(0.1f);
+			produto.visualizar();
+		}
 		
 		leia.close();
 	}

@@ -1,19 +1,19 @@
 package atividade1;
 
-public class ClasseCliente {
+public abstract class ClasseCliente {
 	
 	private String nome;
 	private String email;
-	private int numero;
-	private int idade;
-	private int identidade;
+	private int telefone;
+	private int produto;
+	private int id;
 	
-	public ClasseCliente(String nome, String email, int numero, int idade, int identidade) {
+	public ClasseCliente(String nome, String email, int telefone, int produto, int id) {
 		this.nome = nome;
 		this.email = email;
-		this.numero = numero;
-		this.idade = idade;
-		this.identidade = identidade;
+		this.telefone = telefone;
+		this.produto = produto;
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -32,28 +32,28 @@ public class ClasseCliente {
 		this.email = email;
 	}
 
-	public int getNumero() {
-		return numero;
+	public int gettelefone() {
+		return telefone;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void settelefone(int telefone) {
+		this.telefone = telefone;
 	}
 
-	public int getIdade() {
-		return idade;
+	public int getproduto() {
+		return produto;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setproduto(int produto) {
+		this.produto = produto;
 	}
 
-	public int getidentidade() {
-		return identidade;
+	public int getid() {
+		return id;
 	}
 
-	public void setidentidade(int identidade) {
-		this.identidade = identidade;
+	public void setid(int id) {
+		this.id = id;
 	}
 	
 	public void visualizar() {
@@ -62,10 +62,10 @@ public class ClasseCliente {
 		System.out.println("		DADOS DA CONTA				");
 		System.out.println("************************************");
 		System.out.println("Nome do Cliente: " + this.nome);
-		System.out.println("Idade  do Cliente: " + this.idade);
+		System.out.println("produto  do Cliente: " + this.produto);
 		System.out.println("Email  do Cliente: " + email);
-		System.out.println("Numero  do Cliente: " + this.numero);
-		System.out.println("Identidade  do Cliente: " + this.identidade);
+		System.out.println("telefone  do Cliente: " + this.telefone);
+		System.out.println("id  do Cliente: " + this.id);
 		
 	}
 
