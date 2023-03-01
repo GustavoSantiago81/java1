@@ -20,6 +20,6 @@ public class SomaSimples {
 		System.out.println("SOMA = " + SOMA);
 		
 		leia.close();
+	
 	}
-
 }
